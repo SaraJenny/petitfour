@@ -29,3 +29,4 @@ Lärarnas bedömning:
 - Exemplariskt välskriven projektrapport, som tar upp samtliga efterfrågade delar.
 - Du går även in på viktiga bitar som säkerhet, tillgänglighet/användbarhet och backup.
 - Ett mycket väl genomfört arbete, som väl uppfyller samtliga krav för högsta betyg. Bra jobbat!
+- BETYG: A
