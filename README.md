@@ -16,7 +16,7 @@ Syftet med uppgiften är att:
 - Skapa användare som med lämpliga behörighetsroller som kan uppdatera/underhålla webbplatsen
 - Planera inför migration (flytt mellan servrar) och backup
 
-Lärarnas bedömning:
+## Lärarnas bedömning
 - Snygg och proper webbplats, med fin grafik och bra bilder.
 - Enkel och tydlig navigering (även om "Boka bord" ligger där startsidan intuitivt kanske borde funnits, längst till vänster).
 - Allting fungerar som tänkt, och HTML-koden validerar korrekt.
