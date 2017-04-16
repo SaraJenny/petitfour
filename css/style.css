@@ -1,0 +1,595 @@
+/* Sara Petersson - Webbdesign för CMS DT152G */
+
+
+/*********************
+TABLE OF CONTENTS
+*********************/
+
+/*
+ * TABLE OF CONTENT
+ * RESET
+ * BASE
+ * HEADER
+ * MAINCONTENT: STRUKTUR
+ * MAINCONTENT: TEXT
+ * FOOTER
+ * MEDIA QUERIES
+*/
+
+
+
+
+
+/*********************
+§RESET
+*********************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, main,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+/*****************************************************************************
+§BASE
+*****************************************************************************/
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size: 100%;
+	color: #090202;
+	height: 100%;
+	background-color: #f5ede5;
+	line-height: 1.5em;
+}
+
+/* Det individuella sidinnehållet */
+#main-content {
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 2.5% 0;
+	overflow: hidden;
+}
+
+main {
+	min-height: 100%;
+	margin-bottom: -244px;
+}
+
+main:after {
+	content: "";
+	display: block;
+	height: 244px;
+}
+
+/* Bildspel på startsidan */
+#slider {
+	z-index: 1;
+}
+
+
+
+
+
+/*****************************************************************************
+§HEADER
+*****************************************************************************/
+
+header {
+	height: 119px;
+	background-color: rgba(245,237,229,.85);
+	position: relative;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	padding-top: 96px;
+}
+
+/* LOGOTYP */
+#logo {
+	width: 158px;
+	position: absolute;
+	top: 13px;
+	left: 50%;
+	margin-left: -79px;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #145092;
+	text-align: center;
+}
+
+/* MENY */
+	header a:hover {
+		text-decoration: none;
+	}
+
+	nav {
+		width: 70%;
+		max-width: 940px;
+		margin: 0 auto;
+	}
+
+	nav li {
+		display: inline-block;
+	}
+
+	nav li:first-child {
+		margin-right: 15%;
+	}
+
+	nav li:last-child {
+		margin-left: 13%;
+	}
+
+	/* Meny-länken i navigationen */
+	nav li:nth-child(2) {
+		margin-right: 33%;
+	}
+
+	nav a {
+		font-family: 'Merriweather', serif;
+		color: #145092;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 1.125em;
+	}
+
+	/* Effekt vid hover och aktuell sida */
+	nav a:hover:after, .current-menu-item a:after {
+		content: "";
+		display: block;
+		height: 2px;
+		position: relative;
+		bottom: -6px;
+		background: #145092;
+	}
+
+
+
+
+/*****************************************************************************
+§MAINCONTENT: STRUKTUR
+*****************************************************************************/
+
+/* Huvudsakliga innehållet på en sida (d.v.s. ej sidebaren) */
+.main-container {
+	float: left;
+	width: 55%;
+	margin-right: 15%;
+}
+
+aside {
+	float: left;
+	width: 30%;
+}
+
+/* Fade-effekt */
+	.fade {
+		opacity: 1;
+		transition: opacity .25s ease-in-out;
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+	}
+
+	.fade:hover {
+		opacity: .2;
+	}
+
+	/* Fade-effekt på länkade sektioner (FRONTPAGE + SINGLE) */
+	.fade-light:hover {
+		opacity: .6;
+	}
+
+/* ---------- FRONTPAGE.PHP (startsidan) ---------- */
+
+/* Nyhetssektionen */
+#start-container {
+	margin: 0 0 0 15%;
+}
+
+/* Sidebar */
+#start-aside {
+	font-family: 'Merriweather', serif;
+}
+
+/* Skapar linje mellan dagarna */
+#start-aside p:after {
+	content: "";
+	display: block;
+	width: 100%;
+	border-top: 1px dotted #e42e1f;
+	margin: 3% 0 6%;
+}
+
+/* Sektion för alla enskilda nyheter */
+	.teaser-section {
+		line-height: 1.3125em;
+	}
+
+	.teaser-section img {
+		float: right;
+		margin-left: 4%;
+	}
+
+	.teaser-section:after {
+		content: "";
+		display: block;
+		width: 100%;
+		border-top: 1px dotted #e42e1f;
+		margin: 4% 0;
+	}
+
+	.teaser-section:last-child:after {
+		width: 0;
+		height: 0;
+	}
+
+/* ---------- SINGLE.PHP (individuella nyheter) ---------- */
+
+/* Sektion för individuellt sidinnehåll */
+.main {
+	margin-top: 215px;
+}
+
+.main img {
+	margin-top: 7.5%;
+}
+
+/* Sektion för enskilda nyheter i sidebaren */
+.side-teaser:after {
+	content: "";
+	display: block;
+	width: 100%;
+	border-top: 1px dotted #e42e1f;
+	margin: 4% 0;
+}
+
+/* ---------- CATEGORY.PHP (nyheter) ---------- */
+
+/* Sektion för alla nyhetsbilder */
+#news-container {
+	overflow: hidden;
+}
+
+#news-container a {
+	float: left;
+	margin: 0 8.51% 5em 0;
+}
+
+#news-container a:hover {
+	text-decoration: none;
+}
+
+/* Var tredje bild */
+#news-container a:nth-child(3n+3) {
+	margin-right: 0;
+}
+
+#news-container figure {
+	position: relative;
+}
+
+#news-container figcaption {
+	position: absolute;
+	top: 2em;
+	left: 2em;
+	display: none;
+	font-family: 'Merriweather', sans-serif;
+	font-weight: 700;
+	color: #e42e1f;
+	width: 75%;
+}
+
+/* Nyheter utan bild */
+.no-image-news {
+	width: 194px;
+	border: 1px solid #468847;
+	height: 242px;
+	padding: 2em;
+}
+
+/* ---------- PAGE-MENY.PHP (menysidan) ---------- */
+
+/* Två lika breda sektioner */
+.half {
+	float: left;
+	width: 45%;
+	margin-right: 10%;
+}
+
+/* Varannan sektion ska inte ha någon högermarginal */
+#main-content .half:nth-child(odd) {
+	margin-right: 0;
+}
+
+
+
+
+
+/*****************************************************************************
+§MAINCONTENT: TEXT
+*****************************************************************************/
+
+h2 {
+	font-family: 'Merriweather', serif;
+	font-size: 3em;
+	color: #e42e1f;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 5%;
+}
+
+/* Rubriker som ligger i spalt */
+.main-container h2 {
+	font-size: 1.875em;
+	text-transform: none;
+	text-align: left;
+}
+
+/* Rubrik på sidor för enskilda nyheter */
+.single-date+h2 {
+	margin-top: .2em;
+}
+
+aside h2 {
+	font-size: 1.5em;
+	text-align: left;
+}
+
+/* Rubriker för alla sidor med undantag för individuella nyheter och på startsidan */
+#page-h2 {
+	margin-top: 215px;
+}
+
+/* Sidebar på startsidan (Dagens rätt) */
+#start-aside h2 {
+	font-size: 1.875em;
+	color: #090202;
+	text-align: center;
+	height: 115px;
+	background: url("../images/border-red.png") no-repeat center;
+	width: 282px;
+}
+
+h3 {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-size: 1.125em;
+	color: #e42e1f;
+}
+
+aside h3 {
+	font-size: .875em;
+}
+
+/* Sidebar på startsidan (Dag och datum) */
+#start-aside h3 {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1.125em;
+	color: #090202;
+}
+
+p {
+	font-size: .875em;
+}
+
+p+p {
+	margin-top: 1em;
+}
+
+aside p {
+	font-size: .75em;
+}
+
+/* Datum */
+.date {
+	font-size: .6875em;
+	font-weight: 700;
+	color: #090202;
+}
+
+/* Datum för enskild nyhet */
+.single-date {
+	color: #6b6767;
+}
+
+a {
+	color: #145092;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Länk om fler nyheter */
+.more-cat {
+	font-size: .875em;
+}
+
+/* Hela sektioner som är länkade */
+	.more {
+		color: #090202;
+	}
+
+	.more:hover {
+		text-decoration: none;
+	}
+
+h2 span {
+	display: block;
+	padding-top: 1.6em;
+}
+
+/* Läs mer-länkar */
+	.link {
+		color: #145092;
+		text-decoration: none;
+	}
+
+	.link:hover {
+		text-decoration: underline;
+	}
+
+/* Nyhetsutdrag på nyhetsbilder (CATEGORY.PHP) */
+.news-excerpt {
+	font-size: .875em;
+	color: #090202;
+	font-weight: normal;
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+strong {
+	font-weight: 700;
+}
+
+
+
+
+/*****************************************************************************
+§FOOTER
+*****************************************************************************/
+
+footer {
+	background-color: #145092;
+	height: 244px;
+	color: #f5ede5;
+	font-family: 'Merriweather', serif;
+}
+
+/* Sektion för footerinnehåll */
+#footer-container {
+	max-width: 940px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 20px 0;
+}
+
+address,
+#hours {
+	float: left;
+	margin-top: 2.5%;
+	width: 25%;
+}
+
+/* Rubriker i footern */
+.footer-heading {
+	font-size: 1.125em;
+	text-transform: uppercase;
+	margin-bottom: 8%;
+}
+
+/* Öppettider */
+	#hours {
+		text-align: right;
+	}
+
+	#hours .footer-heading {
+		font-size: .75em;
+		margin-bottom: 0;
+	}
+
+	.footer-heading+p {
+		margin-top: 0;
+	}
+
+/* Logotyp */
+	#footer-logo {
+		float: left;
+		width: 50%;
+	}
+
+	#footer-logo a {
+		display: block;
+		width: 204px;
+		height: 204px;
+		margin: 0 auto;
+	}
+
+footer p {
+	font-size: .75em;
+}
+
+footer a {
+	color: #f5ede5;
+	font-size: .75em;
+}
+
+footer p+a {
+	display: block;
+	margin-top: 1.5em;
+}
+
+
+
+
+
+/*****************************************************************************
+MEDIA QUERIES
+*****************************************************************************/
+@media screen and (max-width: 1360px) {
+
+	nav {
+		width: 95%;
+		padding: 0 2.5%;
+	}
+}
